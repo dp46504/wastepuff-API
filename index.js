@@ -8,6 +8,7 @@ const mongoose = require("mongoose");
 // Import Routes
 const loginRoute = require("./routes/login");
 const registerRoute = require("./routes/register");
+const postRoute = require("./routes/posts");
 
 dotenv.config();
 
@@ -21,7 +22,10 @@ const MongoClient = mongoose.connect(process.env.DATABASE_URL, () => {
 });
 
 // Middlewares
+
 app.use("/register", registerRoute);
+app.use("/login", loginRoute);
+app.use("/posts", postRoute);
 
 app.listen(process.env.PORT || 5000, () => {
   console.log(`Server is listening`);
