@@ -29,6 +29,7 @@ router.post("/", async (req, res) => {
     const user = new User({
       email: req.body.email,
       password: hashedPassword,
+      wasted: 0,
     });
 
     // Adding user to database
