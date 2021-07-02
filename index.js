@@ -33,7 +33,7 @@ app.use("/getdata", getDataRoute);
 app.use("/minusone", minusOneRoute);
 
 app.listen(process.env.PORT || 5000, () => {
-  console.log(`Server is listening`);
+  console.log(`Server is listening on ${PORT}`);
 });
 
 module.exports = db;
